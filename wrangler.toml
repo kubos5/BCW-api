@@ -1,0 +1,24 @@
+# Configurazione del Worker di BCW-api (vedi README, "Pubblicazione su Cloudflare").
+name = "bcw-api"
+main = "src/worker.js"
+compatibility_date = "2025-09-01"
+workers_dev = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "bcw"
+# Sostituisci con l'id stampato da `npx wrangler d1 create bcw`.
+database_id = "00000000-0000-0000-0000-000000000000"
+migrations_dir = "migrations"
+
+[vars]
+# Siti che possono usare l'API dal browser, separati da virgole ("*" = tutti).
+ALLOWED_ORIGINS = "*"
+# "false" per non accettare nuovi account BCW.
+ALLOW_REGISTRATION = "true"
+# Dimensione massima di un file dell'orario e spazio per account BCW, in MB.
+FILE_MAX_MB = "10"
+FILE_QUOTA_MB = "100"
+
+# Il segreto CREDENTIALS_KEY (32 byte in base64) non va qui: impostalo con
+#   openssl rand -base64 32 | npx wrangler secret put CREDENTIALS_KEY

@@ -1,0 +1,22 @@
+{
+  "name": "bcw-api",
+  "version": "1.0.0",
+  "description": "Backend di BCW (Better ClasseViVa): account BCW, account Classeviva abbinati e sincronizzazione.",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "start": "node --no-warnings=ExperimentalWarning server/node.js",
+    "test": "node --no-warnings=ExperimentalWarning --test test/*.test.js",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:migrate": "wrangler d1 migrations apply bcw --remote",
+    "db:migrate:local": "wrangler d1 migrations apply bcw --local"
+  },
+  "engines": {
+    "node": ">=22.5"
+  },
+  "devDependencies": {
+    "wrangler": "^4.40.0"
+  }
+}
