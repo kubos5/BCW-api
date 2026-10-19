@@ -8,7 +8,7 @@ workers_dev = true
 binding = "DB"
 database_name = "bcw"
 # Sostituisci con l'id stampato da `npx wrangler d1 create bcw`.
-database_id = "00000000-0000-0000-0000-000000000000"
+database_id = "cb21eea4-8761-4fbc-a1a4-4a296f707443"
 migrations_dir = "migrations"
 
 [vars]
